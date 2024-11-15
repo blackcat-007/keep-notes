@@ -1,9 +1,9 @@
 import axios from "axios"//axios is  a http client cleanway to send network/http request
 import {ACCESS_TOKEN} from "./constants"
 
-
+const apiUrl ="/choreo-apis/djangoreactkeepnotes/backend/v1"
 const api=axios.create({
-    baseURL:import.meta.env.VITE_API_URL //import anything which is spcified in the enviroment variable FILE 
+    baseURL:import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL :apiUrl ,//import anything which is spcified in the enviroment variable FILE 
 }) 
 //interceptors actually intercept any request we are gonna sent and automatically add correct headers we dont'have to write headers
 api.interceptors.request.use(
